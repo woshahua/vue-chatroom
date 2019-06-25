@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
+    <head><script src="/socket.io/socket.io.js"></script></head>
     <body>
         <h1>chatRoom</h1>
+        <div id="messages"></div>
     </body>
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script>
+    var socket = io.connect();
+    $(document).ready(function(){
+        console.log("ready")
+        socket.on("message", function(message){
+            console.log(message)
+            var msgElement = $('<div></div>').text(message.text);
+            $("#messages").append(msgElement);
+    });
+    });
+    </script>
 </html>

@@ -10,7 +10,8 @@ exports.listen = function(server){
     // log level is not valid
     // io.set("log level", 1);
     io.sockets.on("connection", function(socket){
-        joinRoom(socket, "lobby")
+        joinRoom(socket, "lobby");
+        console.log("test");
     })
 }
 
@@ -18,9 +19,9 @@ function joinRoom(socket, room){
     // what is room stand for 
     socket.join(room);
     currentRoom[socket.id] = room;
-    socket.emit("join", {room: room});
+    // socket.emit("joinRoom", {room: room});
     socket.broadcast.to(room).emit("message",{
-        text: "someone has joined" + room
+        text: "someone has joined " + room
     });
     // TODO: maybe add usersInfo broadcast here
 }

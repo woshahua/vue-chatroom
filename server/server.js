@@ -1,6 +1,6 @@
 const express = require("express");
-const http = require("http");
 const app = express();
+const http = require("http");
 const chatServer = require("./chat/chat_server");
 
 
@@ -13,6 +13,8 @@ app.get("/", function(req, res){
 });
 
 const server = http.createServer(app);
-server.listen(app.get("port"));
-
 chatServer.listen(server);
+
+server.listen(app.get("port"), function(){
+    console.log(`server listen on port:${app.get("port")}`)
+});
