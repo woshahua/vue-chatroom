@@ -45,9 +45,9 @@ function joinRoom(socket, room){
     socket.join(room);
     currentRoom[socket.id] = room;
     // socket.emit("joinRoom", {room: room});
-    socket.broadcast.to(room).emit("message",{
-        text: "someone has joined " + room
-    });
+    // socket.broadcast.to(room).emit("message",{
+        // text: "someone has joined " + room
+    // });
     // TODO: maybe add usersInfo broadcast here
 }
 

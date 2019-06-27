@@ -46,7 +46,7 @@ export default{
   },
   methods:{
     sendMessage(){
-      this.$socket.emit("message", {name: this.userName, room: "lobby", text: this.inputMsg})
+      this.$socket.emit("message", {name: this.userName, room: "lobby", text: this.inputMsg, robot: true})
       console.log(this.messageList)
       this.inputMsg = ""
     },
