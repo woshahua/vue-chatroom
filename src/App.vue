@@ -1,17 +1,26 @@
 <template>
   <v-app>
-    <v-toolbar color="light blue darken-5">
-    <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>Title</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat>Link One</v-btn>
-      <v-btn flat>Link Two</v-btn>
-      <v-btn flat>Link Three</v-btn>
-    </v-toolbar-items>
+    <v-toolbar fixed>
+      <v-icon>chat</v-icon>
     </v-toolbar>
     <!--use absolute to locate in global-->
-    <v-bottom-nav absolute>
+    <HelloWorld></HelloWorld>
+    <!-- <div class="bottom">
+      <v-layout row>
+      <v-flex xs12 sm4 md3>
+          <v-text-field
+            class="input"
+            label="type..."
+            single-line
+            outline
+            @keyup.13="sendMessage"
+          ></v-text-field>
+        </v-flex>
+        <v-btn round class="sendBtn" color = "info" @click="sendMessage">Send</v-btn>
+      </v-layout>
+      
+      <input type="text" id="sendtxt" v-model.trim="inputMsg" @keyup.13="sendMessage"> -->
+    <v-bottom-nav fixed>
       <v-tabs color="blue grey lighten-5"
       fixed-tabs
       icons-and-text
@@ -43,8 +52,7 @@ export default {
   },
   data () {
     return {
-      //
     }
-  }
+  },
 }
 </script>
