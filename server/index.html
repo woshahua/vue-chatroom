@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head><script src="/socket.io/socket.io.js"></script></head>
+    <body>
+        <h1>chatRoom</h1>
+        <div id ="room"></div>
+        <div id="messages"></div>
+        <form id="send-form">
+        <input id="send-message" />
+        <input id="send-btn" type="submit" value="Send" />
+        </form>
+    </body>
+    <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+    <script src="/javascript/chat.js"></script>
+    <script src="/javascript/bot.js"></script>
+    <script>
+    function divEscapedContent(message){
+        return $("<div></div>").text(message);
+    }
+    function getUserInput(chat, socket){
+        var message = $("#send-message").val();
+        var systemMessage;
+
+        chat.sendMessage($("#room").text(), message);
+        $("#messages").append(divEscapedContent(message));
+        getRobotAns(message); 
+    }
+
+    var socket = io.connect();
+    $(document).ready(function(){
+    chat = new Chat(socket)
+    socket.on("message", function(message){
+        var msgElement = $('<div></div>').text(message.text);
+        $("#messages").append(msgElement);
+        });
+
+    $("#send-message").focus();
+    $("#send-form").submit(function(){
+        getUserInput(chat, socket);
+        return false;
+    })
+    });
+    </script>
+</html>
