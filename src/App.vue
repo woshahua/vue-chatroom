@@ -12,21 +12,6 @@
       </v-layout>
     </v-toolbar>
     <router-view />
-      <v-layout row>
-      <v-flex xs12 sm4 md3>
-          <v-text-field
-            class="input"
-            label="type..."
-            single-line
-            outline
-            @keyup.13="sendMessage"
-          ></v-text-field>
-        </v-flex>
-        <v-btn round class="sendBtn" color = "info" @click="sendMessage">Send</v-btn>
-      </v-layout>
-      
-      <input type="text" id="sendtxt" v-model.trim="inputMsg" @keyup.13="sendMessage"> -->
-
       <v-bottom-nav absolute v-if="didshowBottom">
       <v-tabs color="blue grey lighten-5"
       fixed-tabs
