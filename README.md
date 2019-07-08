@@ -1,7 +1,13 @@
 # Mine
 - a chat room to provide common topic.
 ## usage
-
+```
+cd server
+node server.js  // this will listen 3000 port
+cd ../
+npm run serve   // should listen on 8080 port or 8081 ...
+// access localhost:8080
+```
 
 ## There is three features here
 1. Chat Room, if you type @news, in same room for all client there will prompt a news line to provide topic.
