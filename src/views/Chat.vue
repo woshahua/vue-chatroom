@@ -65,8 +65,6 @@ export default{
   // },
   sockets:{
     login(data){
-      console.log("login data " + data)
-      console.log(data.name)
       this.userName = data.name
     },
     message(data){

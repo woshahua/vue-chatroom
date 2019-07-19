@@ -91,8 +91,7 @@
           if(this.inputMsg.includes("@news")){
               this.$socket.emit("news")
           }else{
-          this.$socket.emit("message", {name: this.userName, room: "lobby", text: this.inputMsg})
-          console.log(this.messageList)
+            this.$socket.emit("message", {name: this.userName, room: "lobby", text: this.inputMsg})
           }
           this.inputMsg = ""
         },
