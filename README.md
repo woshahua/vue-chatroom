@@ -18,3 +18,6 @@ npm run serve   // should listen on 8080 port or 8081 ...
 - in some page, you cant head back to home.
 - actually, this is write for smartphone page, so it may looks wired in desktop.
 - profile page is not implemented.
+- you can only chat at lobby room, currently.
+- you cannot add new room or change your username
+- in some case you will not be assign with a username T.T
